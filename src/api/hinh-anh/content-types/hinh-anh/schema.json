@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hinh_anhs",
+  "info": {
+    "singularName": "hinh-anh",
+    "pluralName": "hinh-anhs",
+    "displayName": "Hình ảnh",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "json": {
+      "type": "json"
+    },
+    "gian_hang": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::gian-hang.gian-hang",
+      "mappedBy": "hinh_anh"
+    }
+  }
+}

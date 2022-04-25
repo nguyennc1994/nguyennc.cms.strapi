@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gian_hangs",
+  "info": {
+    "singularName": "gian-hang",
+    "pluralName": "gian-hangs",
+    "displayName": "Gian hàng",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "detail": {
+      "type": "richtext"
+    },
+    "media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "hinh_anh": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::hinh-anh.hinh-anh",
+      "inversedBy": "gian_hang"
+    },
+    "bai_viet": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::bai-viet.bai-viet",
+      "inversedBy": "gian_hang"
+    }
+  }
+}
